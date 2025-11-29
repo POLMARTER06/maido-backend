@@ -4,12 +4,13 @@ export function seed() {
   const userCount = db.prepare("SELECT COUNT(*) AS c FROM users").get().c;
   if (userCount === 0) {
     const insertUser = db.prepare("INSERT INTO users (name, role, active) VALUES (?, ?, 1)");
-    insertUser.run("Marie Dubois", "serveur", 1);
-    insertUser.run("Jean Martin", "serveur", 1);
-    insertUser.run("Sophie Laurent", "serveur", 1);
-    insertUser.run("Cuisine", "cuisine", 1);
-    insertUser.run("Bar", "bar", 1);
-    insertUser.run("Caisse", "caisse", 1);
+    insertUser.run("Marie Dubois", "serveur");
+insertUser.run("Jean Martin", "serveur");
+insertUser.run("Sophie Laurent", "serveur");
+insertUser.run("Cuisine", "cuisine");
+insertUser.run("Bar", "bar");
+insertUser.run("Caisse", "caisse");
+
   }
 
   const tableCount = db.prepare("SELECT COUNT(*) AS c FROM restaurant_tables").get().c;
